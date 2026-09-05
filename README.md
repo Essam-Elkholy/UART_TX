@@ -6,6 +6,12 @@ A configurable UART transmitter built from four cooperating blocks — a control
   <img src="images/UART_TX.png" alt="UART_TX block symbol" width="700">
 </p>
 
+## Block Diagram
+
+<p align="center">
+  <img src="images/Block Diagram.png" alt="UART_TX high-level block diagram" width="700">
+</p>
+
 ## Architecture
 
 <p align="center">
@@ -138,6 +144,7 @@ The design was checked with **Synopsys SpyGlass** (`Lint/Lint.prj`, `rtl_handoff
 │   └── moresimple.rpt        # SpyGlass lint report
 ├── images/
 │   ├── UART_TX.png            # Block symbol
+│   ├── Block_Diagram.png      # High-level block diagram
 │   ├── UART_TX_TOP.png        # Top-level RTL schematic
 │   ├── FSM.png                # FSM RTL schematic
 │   ├── Serializer.png         # Serializer RTL schematic
