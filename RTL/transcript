@@ -1,0 +1,165 @@
+# do run.do
+# 
+# if {![file exists work]} {
+#     vlib work
+# }
+# 
+# vmap work work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Copying C:/intelFPGA/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -work work FSM.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:25:52 on Sep 05,2026
+# vlog -work work FSM.v 
+# -- Compiling module FSM
+# 
+# Top level modules:
+# 	FSM
+# End time: 22:25:52 on Sep 05,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work MUX.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:25:52 on Sep 05,2026
+# vlog -work work MUX.v 
+# -- Compiling module MUX
+# 
+# Top level modules:
+# 	MUX
+# End time: 22:25:52 on Sep 05,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work parity_Calc.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:25:52 on Sep 05,2026
+# vlog -work work parity_Calc.v 
+# -- Compiling module parity_Calc
+# 
+# Top level modules:
+# 	parity_Calc
+# End time: 22:25:53 on Sep 05,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work serializer.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:25:53 on Sep 05,2026
+# vlog -work work serializer.v 
+# -- Compiling module serializer
+# 
+# Top level modules:
+# 	serializer
+# End time: 22:25:53 on Sep 05,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work UART_TX.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:25:53 on Sep 05,2026
+# vlog -work work UART_TX.v 
+# -- Compiling module UART_TX
+# 
+# Top level modules:
+# 	UART_TX
+# End time: 22:25:53 on Sep 05,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work UART_TX_tb.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:25:53 on Sep 05,2026
+# vlog -work work UART_TX_tb.v 
+# -- Compiling module UART_TX_tb
+# 
+# Top level modules:
+# 	UART_TX_tb
+# End time: 22:25:53 on Sep 05,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -voptargs=+acc work.UART_TX_tb
+# vsim -voptargs="+acc" work.UART_TX_tb 
+# Start time: 22:25:53 on Sep 05,2026
+# Loading work.UART_TX_tb
+# Loading work.UART_TX
+# Loading work.FSM
+# Loading work.serializer
+# Loading work.parity_Calc
+# Loading work.MUX
+# 
+# do wave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /UART_TX_tb/P_DATA
+# add wave -noupdate /UART_TX_tb/DATA_VALID
+# add wave -noupdate /UART_TX_tb/PAR_EN
+# add wave -noupdate /UART_TX_tb/PAR_TYP
+# add wave -noupdate /UART_TX_tb/CLK
+# add wave -noupdate /UART_TX_tb/RST
+# add wave -noupdate /UART_TX_tb/TX_OUT
+# add wave -noupdate /UART_TX_tb/Busy
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+# quietly wave cursor active 0
+# wave activecursor not supported in batch mode
+# configure wave -namecolwidth 150
+# configure wave not supported in batch mode
+# configure wave -valuecolwidth 100
+# configure wave not supported in batch mode
+# configure wave -justifyvalue left
+# configure wave not supported in batch mode
+# configure wave -signalnamewidth 0
+# configure wave not supported in batch mode
+# configure wave -snapdistance 10
+# configure wave not supported in batch mode
+# configure wave -datasetprefix 0
+# configure wave not supported in batch mode
+# configure wave -rowmargin 4
+# configure wave not supported in batch mode
+# configure wave -childrowmargin 2
+# configure wave not supported in batch mode
+# configure wave -gridoffset 0
+# configure wave not supported in batch mode
+# configure wave -gridperiod 1
+# configure wave not supported in batch mode
+# configure wave -griddelta 40
+# configure wave not supported in batch mode
+# configure wave -timeline 0
+# configure wave not supported in batch mode
+# configure wave -timelineunits ps
+# configure wave not supported in batch mode
+# update
+# WaveRestoreZoom {0 ps} {202125 ps}
+# 
+# run -all
+# Time=0 | RST=0 | P_DATA=00 | VALID=0 | PAR_EN=0 | PAR_TYP=0 | Busy=0 | TX_OUT=1
+# Time=10000 | RST=1 | P_DATA=a5 | VALID=1 | PAR_EN=0 | PAR_TYP=0 | Busy=0 | TX_OUT=1
+# Time=13000 | RST=1 | P_DATA=a5 | VALID=1 | PAR_EN=0 | PAR_TYP=0 | Busy=1 | TX_OUT=0
+# Time=15000 | RST=1 | P_DATA=a5 | VALID=0 | PAR_EN=0 | PAR_TYP=0 | Busy=1 | TX_OUT=0
+# Time=18000 | RST=1 | P_DATA=a5 | VALID=0 | PAR_EN=0 | PAR_TYP=0 | Busy=1 | TX_OUT=1
+# Time=23000 | RST=1 | P_DATA=a5 | VALID=0 | PAR_EN=0 | PAR_TYP=0 | Busy=1 | TX_OUT=0
+# Time=28000 | RST=1 | P_DATA=a5 | VALID=0 | PAR_EN=0 | PAR_TYP=0 | Busy=1 | TX_OUT=1
+# Time=33000 | RST=1 | P_DATA=a5 | VALID=0 | PAR_EN=0 | PAR_TYP=0 | Busy=1 | TX_OUT=0
+# Time=43000 | RST=1 | P_DATA=a5 | VALID=0 | PAR_EN=0 | PAR_TYP=0 | Busy=1 | TX_OUT=1
+# Time=48000 | RST=1 | P_DATA=a5 | VALID=0 | PAR_EN=0 | PAR_TYP=0 | Busy=1 | TX_OUT=0
+# Time=53000 | RST=1 | P_DATA=a5 | VALID=0 | PAR_EN=0 | PAR_TYP=0 | Busy=1 | TX_OUT=1
+# Time=63000 | RST=1 | P_DATA=a5 | VALID=0 | PAR_EN=0 | PAR_TYP=0 | Busy=0 | TX_OUT=1
+# Time=65000 | RST=1 | P_DATA=f3 | VALID=1 | PAR_EN=1 | PAR_TYP=0 | Busy=0 | TX_OUT=1
+# Time=68000 | RST=1 | P_DATA=f3 | VALID=1 | PAR_EN=1 | PAR_TYP=0 | Busy=1 | TX_OUT=0
+# Time=70000 | RST=1 | P_DATA=f3 | VALID=0 | PAR_EN=1 | PAR_TYP=0 | Busy=1 | TX_OUT=0
+# Time=73000 | RST=1 | P_DATA=f3 | VALID=0 | PAR_EN=1 | PAR_TYP=0 | Busy=1 | TX_OUT=1
+# Time=83000 | RST=1 | P_DATA=f3 | VALID=0 | PAR_EN=1 | PAR_TYP=0 | Busy=1 | TX_OUT=0
+# Time=93000 | RST=1 | P_DATA=f3 | VALID=0 | PAR_EN=1 | PAR_TYP=0 | Busy=1 | TX_OUT=1
+# Time=113000 | RST=1 | P_DATA=f3 | VALID=0 | PAR_EN=1 | PAR_TYP=0 | Busy=1 | TX_OUT=0
+# Time=118000 | RST=1 | P_DATA=f3 | VALID=0 | PAR_EN=1 | PAR_TYP=0 | Busy=1 | TX_OUT=1
+# Time=123000 | RST=1 | P_DATA=f3 | VALID=0 | PAR_EN=1 | PAR_TYP=0 | Busy=0 | TX_OUT=1
+# Time=125000 | RST=1 | P_DATA=f3 | VALID=1 | PAR_EN=1 | PAR_TYP=1 | Busy=0 | TX_OUT=1
+# Time=128000 | RST=1 | P_DATA=f3 | VALID=1 | PAR_EN=1 | PAR_TYP=1 | Busy=1 | TX_OUT=0
+# Time=130000 | RST=1 | P_DATA=f3 | VALID=0 | PAR_EN=1 | PAR_TYP=1 | Busy=1 | TX_OUT=0
+# Time=133000 | RST=1 | P_DATA=f3 | VALID=0 | PAR_EN=1 | PAR_TYP=1 | Busy=1 | TX_OUT=1
+# Time=143000 | RST=1 | P_DATA=f3 | VALID=0 | PAR_EN=1 | PAR_TYP=1 | Busy=1 | TX_OUT=0
+# Time=153000 | RST=1 | P_DATA=f3 | VALID=0 | PAR_EN=1 | PAR_TYP=1 | Busy=1 | TX_OUT=1
+# Time=183000 | RST=1 | P_DATA=f3 | VALID=0 | PAR_EN=1 | PAR_TYP=1 | Busy=0 | TX_OUT=1
+# ** Note: $stop    : UART_TX_tb.v(93)
+#    Time: 192500 ps  Iteration: 0  Instance: /UART_TX_tb
+# Break in Module UART_TX_tb at UART_TX_tb.v line 93
+# Stopped at UART_TX_tb.v line 93
+# wave zoom full
+# wave zoomfull not supported in batch mode
+#  quit -f
+# End time: 22:25:53 on Sep 05,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
